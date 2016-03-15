@@ -1,7 +1,9 @@
 #!/bin/bash
 
-wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb
+# https://bordeltabernacle.github.io/2016/01/06/notes-on-elixir-upgrading-toinstalling-v12-on-ubuntu.html
 
-sudo dpkg -i erlang-solutions_1.0_all.deb
-sudo apt-get install -y erlang erlang-dev
-sudo apt-get install -y elixir
+git clone https://github.com/elixir-lang/elixir.git
+cd elixir/
+git checkout v1.2
+make clean test
+sudo make install
